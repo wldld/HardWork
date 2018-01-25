@@ -33,10 +33,10 @@ public class crudDAO {
 
     /**
      * 直接执行一条对数据库修改（包括增删改）的SQL语句,然后释放连接
-     * @param sql
+     * @param SQL增删改语句
      * @throws SQLException
      */
-    public void executeSQL(String sql) throws SQLException{
+    public static void executeSQL(String sql) throws SQLException{
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.executeUpdate();
         DatabaseDAO.releaseConnection(connection);
