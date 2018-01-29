@@ -1,10 +1,12 @@
 package domain;
 
+import java.sql.Timestamp;
+
 public class Information {
     private int id;
     private String title;
     private String content;
-    private String publishingtime;
+    private Timestamp publishingtime;
     private String publishuser;
     private String Type;
 
@@ -32,11 +34,11 @@ public class Information {
         this.content = content;
     }
 
-    public String getPublishingtime() {
+    public Timestamp getPublishingtime() {
         return publishingtime;
     }
 
-    public void setPublishingtime(String publishingtime) {
+    public void setPublishingtime(Timestamp publishingtime) {
         this.publishingtime = publishingtime;
     }
 

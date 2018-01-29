@@ -1,7 +1,7 @@
 package domain;
 
 public class User {
-    private String id;
+    private int  id;
     private String username;
     private String password;
     private String realname;
@@ -21,11 +21,11 @@ public class User {
         this.username = username;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

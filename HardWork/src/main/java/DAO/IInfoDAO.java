@@ -10,6 +10,6 @@ public interface IInfoDAO {
     public void addInfo(Information info);
 
     //该方法获取所有的信息表
-public List<Information> getAllInfo();
+    public List<Information> getAllInfo();
 
 }
