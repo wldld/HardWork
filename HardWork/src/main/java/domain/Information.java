@@ -7,8 +7,9 @@ public class Information {
     private String title;
     private String content;
     private Timestamp publishingtime;
-    private String publishuser;
-    private String Type;
+    private String publishinguser;
+    private String type;
+
 
     public int getId() {
         return id;
@@ -42,19 +43,16 @@ public class Information {
         this.publishingtime = publishingtime;
     }
 
-    public String getPublishuser() {
-        return publishuser;
+    public String getPublishinguser() {
+        return publishinguser;
     }
 
-    public void setPublishuser(String publishuser) {
-        this.publishuser = publishuser;
+    public void setPublishinguser(String publishuser) {
+        this.publishinguser = publishuser;
     }
 
-    public String getType() {
-        return Type;
-    }
+    public String getType() { return type; }
 
-    public void setType(String type) {
-        Type = type;
-    }
+    public void setType(String type) { this.type = type; }
+
 }

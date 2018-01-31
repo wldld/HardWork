@@ -7,7 +7,7 @@ public class User {
     private String realname;
     private String gender;
     private Integer age;
-    private String personalSignature;
+    private String personalsignature;
     public User(){
 
     }
@@ -16,7 +16,7 @@ public class User {
         this.age = age;
         this.gender = gender;
         this.password = password;
-        this.personalSignature = personalSignature;
+        this.personalsignature = personalSignature;
         this.realname = realname;
         this.username = username;
     }
@@ -70,10 +70,10 @@ public class User {
     }
 
     public String getPersonalSignature() {
-        return personalSignature;
+        return personalsignature;
     }
 
-    public void setPersonalSignature(String personalSignature) {
-        this.personalSignature = personalSignature;
+    public void setPersonalSignature(String personalsignature) {
+        this.personalsignature = personalsignature;
     }
 }

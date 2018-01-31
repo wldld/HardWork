@@ -8,7 +8,7 @@ public class DatabaseDAO {
     private static String user = "root";
     private static String password = "123456";
 
-    private static Connection connection=null;
+    public static Connection connection=null;
 
     //获取数据库连接对象
     public static Connection getConnection() throws Exception{
@@ -23,12 +23,20 @@ public class DatabaseDAO {
     public static void releaseConnection() throws SQLException{
         if(!connection.isClosed()){
             connection.close();
+            connection = null;
         }
     }
 
+    /**
+     * 执行一个SQL查询语句，并返回查询的结果集
+     * @param sql
+     * @return resultSet
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public ResultSet getResultSet(String sql) throws SQLException,ClassNotFoundException{
         System.out.println("SQL语句"+sql);
-        if(connection == null){
+        if(connection == null ){
             try{
                 this.connection = getConnection();
             }catch (Exception ex){
@@ -38,6 +46,24 @@ public class DatabaseDAO {
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
         return resultSet;
+    }
+
+    /**
+     * 直接执行一条对数据库修改（包括增删改）的SQL语句
+     * @param sql
+     * @throws SQLException
+     */
+    public void executeSQL(String sql) throws SQLException{
+        if(connection == null){
+            try {
+                connection = getConnection();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.executeUpdate();
+        releaseConnection();
     }
 
 
